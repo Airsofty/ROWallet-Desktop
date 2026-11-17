@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src mediastream: blob:; connect-src 'none'; base-uri 'none'">
+<meta name="color-scheme" content="light dark">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ROWallet</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="root">
+  <div class="scr" id="splash"><div class="sl"><span id="sl1"></span><div><small>EU Digital Identity</small><b>Wallet</b></div></div><div class="bar"></div></div>
+  <div class="scr" id="login" hidden>
+    <div class="lside">
+      <div class="chipw"><span id="ll"></span><div><small>Portofel privat</small><b>ROWallet</b></div></div>
+      <div><h1>Identitatea ta, doar în mâinile tale</h1><p>Un portofel digital pentru documentele oficiale, făcut pentru Windows.</p>
+      <ul class="pts"><li>Fără bază de date și fără server</li><li>Totul stă criptat, pe acest calculator</li><li>Tu alegi ce arăți și cui</li></ul></div>
+      <p style="font-size:12.5px;opacity:.65">Documentele introduse de tine nu sunt verificate oficial.</p>
+    </div>
+    <div class="lmain"><div class="lbox"><h2 id="lh1">Bun venit înapoi</h2><p class="s" id="lp">Introdu codul de acces din 6 cifre</p><div class="dots" id="dots"></div><div id="passArea" hidden><p class="hint" id="passHint"></p><input id="passEntry" type="password" autocomplete="off" placeholder="Frază de acces" style="width:100%;padding:13px;border-radius:9px;border:1px solid #98a8bb"><button class="btn" id="passGo" style="margin-top:10px">Continuă</button></div><button id="switchAuth" class="btn ghost" type="button" style="margin:12px 0">PIN / Frază de acces</button><p class="msg" id="lmsg" role="status"></p><div class="pad" id="pad"></div><p class="hint" id="lhint"></p></div></div>
+  </div>
+  <div class="scr" id="app" hidden></div>
+  <div id="toast" role="status"></div>
+  <dialog id="dlg"></dialog>
+</div>
+<script src="vendor/jsQR.js"></script>
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

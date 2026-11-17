@@ -1,0 +1,38 @@
+{
+  "name": "rowallet-pc",
+  "version": "0.3.1",
+  "description": "ROWallet: local offline desktop wallet, bilingual Romanian (ASCII) / English",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "node scripts/vendor.js",
+    "test": "node test/selftest.js && node test/main-ipc.js && node test/ui-smoke.js && node test/new-documents.js && node test/i18n.js",
+    "dist": "electron-builder --win nsis"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4",
+    "jsqr": "^1.4.0"
+  },
+  "devDependencies": {
+    "electron": "latest",
+    "electron-builder": "latest"
+  },
+  "build": {
+    "appId": "ro.rowallet.desktop.local",
+    "productName": "ROWallet",
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**",
+      "renderer/**"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
